@@ -86,29 +86,30 @@ function App() {
             height: '100vh',
           }}
         >
-          <nav className="transparent p-4 bg-[]">
-            <div class="lg:flex lg:items-center">
+          <nav className="bg-transparent p-4">
+            <div className="lg:flex lg:items-center">
+              {/* Logo placeholder */}
               {/* <a href="javascript:void(0)">
-              <img src={logo} alt="logo" class="w-52" />
-            </a> */}
+        <img src={logo} alt="logo" className="w-52" />
+      </a> */}
             </div>
-            <ul className="flex justify-end ml-2 text-white font-bold space-x-12 text-xl">
-              <li className="hover:text-white-300">
+            <ul className="flex justify-end lg:space-x-12 space-x-6 ml-2 text-white font-bold text-xl">
+              <li className="hover:text-gray-300">
                 <a href="/">
                   <span className="rounded-lg p-1">Home</span>
                 </a>
               </li>
-              <li className="hover:text-black-300">
+              <li className="hover:text-gray-300">
                 <a href="/">
                   <span className="rounded-lg p-1">Horoscope</span>
                 </a>
               </li>
-              <li className="hover:text-black-300">
+              <li className="hover:text-gray-300">
                 <a href="/">
                   <span className="rounded-lg p-1">Astrology</span>
                 </a>
               </li>
-              <li className="hover:text-black-300">
+              <li className="hover:text-gray-300">
                 <a href="/">
                   <span className="rounded-lg p-1">Contact Us</span>
                 </a>
@@ -118,27 +119,28 @@ function App() {
 
           {/* Centered h1 text */}
           <h1
-            className="text-black text-center text-3xl font-bold p-4 mb-2 bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60"
+            className="text-black text-center text-2xl lg:text-3xl font-bold p-4 mb-2 bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60"
             style={{
               borderRadius: '10px',
             }}
           >
             “Anyone can be a millionaire, but to become <br /> a billionaire you need an astrologer.”
           </h1>
-          <div className="flex flex-col justify-center items-start ml-24 h-full ">
 
-            <h3 className="text-white text-center text-4xl font-bold mb-4 ">"Unlock the Mysteries of the Stars"</h3>
-            <h6 className="text-white text-center text-xl font-bold mb-4">"Discover your destiny with personalized astrology readings and insights."</h6>
-
-            {/* Uncomment to display the quote */}
-
+          <div className="flex flex-col justify-center items-center lg:items-start lg:ml-24 h-full px-4">
+            <h3 className="text-white text-center lg:text-left text-3xl lg:text-4xl font-bold mb-4">
+              "Unlock the Mysteries of the Stars"
+            </h3>
+            <h6 className="text-white text-center lg:text-left text-lg lg:text-xl font-bold mb-4">
+              "Discover your destiny with personalized astrology readings and insights."
+            </h6>
 
             <button className="mt-4 px-6 py-2 bg-yellow-500 text-black font-semibold rounded-full hover:bg-yellow-600 transition duration-300">
               Get Started Today
             </button>
           </div>
-
         </div>
+
         <div className='flex flex-wrap pt-10 bg-gray-200'>
           {/* First section with 50% width */}
           <div className='grid grid-cols-9 gap-'>
@@ -223,7 +225,7 @@ function App() {
         </div>
 
         <div className={`bg-red-200 w-full`} style={{ backgroundImage: `url(${sun})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', }}>
-        <h1 className="text-4xl font-bold text-center mt-20">Know Your Horoscope</h1>
+          <h1 className="text-4xl font-bold text-center mt-20">Know Your Horoscope</h1>
           <section className="flex-1 grid grid-cols-4 gap-1 p-2 mb-20 mt-10 w-[530px] mx-auto">
             {/* First row with 4 images */}
             <div className="col-span-4 flex justify-around">
@@ -438,11 +440,12 @@ function App() {
               backgroundImage: `url(${detail})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
+              // backgroundColor: 'skyblue'
               // opacity: '60%'
               // filter: 'blur(5%)',
               // opacity: '0.5', // To give the blurred effect some transparency
             }}
-            className="p-6 rounded-lg shadow-lg max-w-5xl text-left ml-10 text-white"
+            className="p-6 rounded-lg shadow-lg max-w-5xl text-left ml-10 text-white font-bold"
           >
             <div className="mb-4">
               <h3 className="text-4xl font-bold text-center mt-0">Astrology Data</h3>
