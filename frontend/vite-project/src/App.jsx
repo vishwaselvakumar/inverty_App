@@ -100,17 +100,17 @@ function App() {
                 </a>
               </li>
               <li className="hover:text-gray-300">
-                <a href="/">
-                  <span className="rounded-lg p-1">Horoscope</span>
-                </a>
-              </li>
-              <li className="hover:text-gray-300">
-                <a href="/">
+                <a href="#Astrology">
                   <span className="rounded-lg p-1">Astrology</span>
                 </a>
               </li>
               <li className="hover:text-gray-300">
-                <a href="/">
+                <a href="#Horoscope">
+                  <span className="rounded-lg p-1">Horoscope</span>
+                </a>
+              </li>
+              <li className="hover:text-gray-300">
+                <a href="#Contact">
                   <span className="rounded-lg p-1">Contact Us</span>
                 </a>
               </li>
@@ -141,43 +141,45 @@ function App() {
           </div>
         </div>
 
-        <div className='flex flex-wrap pt-10 bg-gray-200'>
-          {/* First section with 50% width */}
-          <div className='grid grid-cols-9 gap-'>
-            {/* Text Section */}
-            <div className=' col-span-5 col-start-2'>
-              <h1 className='text-3xl font-bold mb-4'>Why Astrology?</h1>
-              <p className='text-lg'>
-                Astrology helps us understand the will of God by predicting life events through the study of stars and planets. It's a science with its own methods that has inspired people for centuries, offering insights into various aspects of life. Despite changing beliefs, astrology remains relevant and continues to guide many.
-              </p><br />
-              <p className='text-lg'>
-                Astrology focuses on the influence of cosmic objects, mainly planets and stars, on human lives. While there are 8 planets in our solar system, astrology recognizes 9 planets, called the Navagrahas. Surprisingly, Earth is not included in these planets.
-              </p>
-              <p className='text-lg'>
-                The 9 planets in astrology are:
-                <ul className='list-disc ml-7'>
-                  <li>Sun (Surya)</li>
-                  <li>Moon (Chandra)</li>
-                  <li>Mars (Mangala)</li>
-                  <li>Mercury (Budha)</li>
-                  <li>Jupiter (Brihaspati)</li>
-                  <li>Venus (Shukra)</li>
-                  <li>Saturn (Shani)</li>
-                  <li>Rahu (North Node of the Moon)</li>
-                  <li>Ketu (South Node of the Moon)</li>
-                </ul>
-              </p>
-              <p className='text-lg mb-16'>
-                Some planets are considered friendly, bringing positivity, while others, like Rahu and Ketu, can cause challenges. However, the effects aren't always fixed—Ketu’s influence, for example, may also bring spiritual growth, and Jupiter may not always bring favorable outcomes.
-              </p>
-            </div>
-
-            {/* Image Section */}
-            <div className=' col-span-2 flex justify-end'>
-              <img src={horoscope} alt="Horoscope" className='w-82 h-96 mt-32 ml-16 rounded-full' />
+       <section id='Astrology'>
+          <div className='flex flex-wrap pt-10 bg-gray-200'>
+            {/* First section with 50% width */}
+            <div className='grid grid-cols-9 gap-'>
+              {/* Text Section */}
+              <div className=' col-span-5 col-start-2'>
+                <h1 className='text-3xl font-bold mb-4'>Why Astrology?</h1>
+                <p className='text-lg'>
+                  Astrology helps us understand the will of God by predicting life events through the study of stars and planets. It's a science with its own methods that has inspired people for centuries, offering insights into various aspects of life. Despite changing beliefs, astrology remains relevant and continues to guide many.
+                </p><br />
+                <p className='text-lg'>
+                  Astrology focuses on the influence of cosmic objects, mainly planets and stars, on human lives. While there are 8 planets in our solar system, astrology recognizes 9 planets, called the Navagrahas. Surprisingly, Earth is not included in these planets.
+                </p>
+                <p className='text-lg'>
+                  The 9 planets in astrology are:
+                  <ul className='list-disc ml-7'>
+                    <li>Sun (Surya)</li>
+                    <li>Moon (Chandra)</li>
+                    <li>Mars (Mangala)</li>
+                    <li>Mercury (Budha)</li>
+                    <li>Jupiter (Brihaspati)</li>
+                    <li>Venus (Shukra)</li>
+                    <li>Saturn (Shani)</li>
+                    <li>Rahu (North Node of the Moon)</li>
+                    <li>Ketu (South Node of the Moon)</li>
+                  </ul>
+                </p>
+                <p className='text-lg mb-16'>
+                  Some planets are considered friendly, bringing positivity, while others, like Rahu and Ketu, can cause challenges. However, the effects aren't always fixed—Ketu’s influence, for example, may also bring spiritual growth, and Jupiter may not always bring favorable outcomes.
+                </p>
+              </div>
+  
+              {/* Image Section */}
+              <div className=' col-span-2 flex justify-end'>
+                <img src={horoscope} alt="Horoscope" className='w-82 h-96 mt-32 ml-16 rounded-full' />
+              </div>
             </div>
           </div>
-        </div>
+       </section>
 
         <div className="flex justify-center items-center bg-gray-100">
           <div
@@ -224,85 +226,87 @@ function App() {
           </div>
         </div>
 
-        <div className={`bg-red-200 w-full`} style={{ backgroundImage: `url(${sun})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', }}>
-          <h1 className="text-4xl font-bold text-center mt-20">Know Your Horoscope</h1>
-          <section className="flex-1 grid grid-cols-4 gap-1 p-2 mb-20 mt-10 w-[530px] mx-auto">
-            {/* First row with 4 images */}
-            <div className="col-span-4 flex justify-around">
-              {astro.slice(0, 4).map((tech, index) => (
-                <div
-                  key={index}
-                  data-aos="zoom-in"
-                  data-aos-duration="2000"
-                  className="p-4 rounded-3xl bg-white shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-                  style={{
-                    backgroundImage: 'linear-gradient(145deg, #f5f5f5, #ffffff)',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
-                  }}
-                >
-                  <img src={tech.src} alt={tech.alt} className="h-24 w-24 rounded-md" />
-                </div>
-              ))}
-            </div>
-
-            {/* Second row with 2 images and empty space */}
-            <div className="col-span-4 flex justify-between">
-              {astro.slice(4, 6).map((tech, index) => (
-                <div
-                  key={index}
-                  data-aos="zoom-in"
-                  data-aos-duration="2000"
-                  className="p-4 rounded-3xl bg-white shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-                  style={{
-                    backgroundImage: 'linear-gradient(145deg, #f5f5f5, #ffffff)',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
-                  }}
-                >
-                  <img src={tech.src} alt={tech.alt} className="h-24 w-24 rounded-md" />
-                </div>
-              ))}
-            </div>
-
-            {/* Third row with 2 images and empty space */}
-            <div className="col-span-4 flex justify-between">
-              {astro.slice(6, 8).map((tech, index) => (
-                <div
-                  key={index}
-                  data-aos="zoom-in"
-                  data-aos-duration="2000"
-                  className="p-4 rounded-3xl bg-white shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-                  style={{
-                    backgroundImage: 'linear-gradient(145deg, #f5f5f5, #ffffff)',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
-                  }}
-                >
-                  <img src={tech.src} alt={tech.alt} className="h-24 w-24 rounded-md" />
-                </div>
-              ))}
-            </div>
-
-            {/* Fourth row with 4 images */}
-            <div className="col-span-4 flex justify-around">
-              {astro.slice(8, 12).map((tech, index) => (
-                <div
-                  key={index}
-                  data-aos="zoom-in"
-                  data-aos-duration="2000"
-                  className="p-4 rounded-3xl bg-white shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-                  style={{
-                    backgroundImage: 'linear-gradient(145deg, #f5f5f5, #ffffff)',
-                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
-                  }}
-                >
-                  <img src={tech.src} alt={tech.alt} className="h-24 w-24 rounded-md" />
-                </div>
-              ))}
-            </div>
-
-            {/* Information about zodiac signs */}
-
-          </section>
-        </div>
+       
+          <div  className={`bg-red-200 w-full`} style={{ backgroundImage: `url(${sun})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', }}>
+            <h1 className="text-4xl font-bold text-center mt-20">Know Your Horoscope</h1>
+            <section className="flex-1 grid grid-cols-4 gap-1 p-2 mb-20 mt-10 w-[530px] mx-auto">
+              {/* First row with 4 images */}
+              <div className="col-span-4 flex justify-around">
+                {astro.slice(0, 4).map((tech, index) => (
+                  <div
+                    key={index}
+                    data-aos="zoom-in"
+                    data-aos-duration="2000"
+                    className="p-4 rounded-3xl bg-white shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                    style={{
+                      backgroundImage: 'linear-gradient(145deg, #f5f5f5, #ffffff)',
+                      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                    }}
+                  >
+                    <img src={tech.src} alt={tech.alt} className="h-24 w-24 rounded-md" />
+                  </div>
+                ))}
+              </div>
+  
+              {/* Second row with 2 images and empty space */}
+              <div className="col-span-4 flex justify-between">
+                {astro.slice(4, 6).map((tech, index) => (
+                  <div
+                    key={index}
+                    data-aos="zoom-in"
+                    data-aos-duration="2000"
+                    className="p-4 rounded-3xl bg-white shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                    style={{
+                      backgroundImage: 'linear-gradient(145deg, #f5f5f5, #ffffff)',
+                      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                    }}
+                  >
+                    <img src={tech.src} alt={tech.alt} className="h-24 w-24 rounded-md" />
+                  </div>
+                ))}
+              </div>
+  
+              {/* Third row with 2 images and empty space */}
+              <div className="col-span-4 flex justify-between">
+                {astro.slice(6, 8).map((tech, index) => (
+                  <div
+                    key={index}
+                    data-aos="zoom-in"
+                    data-aos-duration="2000"
+                    className="p-4 rounded-3xl bg-white shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                    style={{
+                      backgroundImage: 'linear-gradient(145deg, #f5f5f5, #ffffff)',
+                      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                    }}
+                  >
+                    <img src={tech.src} alt={tech.alt} className="h-24 w-24 rounded-md" />
+                  </div>
+                ))}
+              </div>
+  
+              {/* Fourth row with 4 images */}
+              <div className="col-span-4 flex justify-around">
+                {astro.slice(8, 12).map((tech, index) => (
+                  <div
+                    key={index}
+                    data-aos="zoom-in"
+                    data-aos-duration="2000"
+                    className="p-4 rounded-3xl bg-white shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                    style={{
+                      backgroundImage: 'linear-gradient(145deg, #f5f5f5, #ffffff)',
+                      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                    }}
+                  >
+                    <img src={tech.src} alt={tech.alt} className="h-24 w-24 rounded-md" />
+                  </div>
+                ))}
+              </div>
+  
+              {/* Information about zodiac signs */}
+  
+            </section>
+          </div>
+       
 
 
 
@@ -333,6 +337,8 @@ function App() {
                   onChange={handleChange}
                   placeholder="Day"
                   className="mt-1 p-2 border border-gray-300 rounded w-full focus:outline-none focus:ring focus:ring-indigo-200"
+                  min="1"
+                  max="31"
                 />
               </div>
 
@@ -345,6 +351,8 @@ function App() {
                   onChange={handleChange}
                   placeholder="Month"
                   className="mt-1 p-2 border border-gray-300 rounded w-full focus:outline-none focus:ring focus:ring-indigo-200"
+                  min="1"
+                  max="12"
                 />
               </div>
 
@@ -357,6 +365,8 @@ function App() {
                   onChange={handleChange}
                   placeholder="Year"
                   className="mt-1 p-2 border border-gray-300 rounded w-full focus:outline-none focus:ring focus:ring-indigo-200"
+                  min="1901"
+                  max="2050"
                 />
               </div>
 
@@ -369,6 +379,8 @@ function App() {
                   onChange={handleChange}
                   placeholder="Hour"
                   className="mt-1 p-2 border border-gray-300 rounded w-full focus:outline-none focus:ring focus:ring-indigo-200"
+                  min="0"
+                  max="23"
                 />
               </div>
 
@@ -381,6 +393,8 @@ function App() {
                   onChange={handleChange}
                   placeholder="Minute"
                   className="mt-1 p-2 border border-gray-300 rounded w-full focus:outline-none focus:ring focus:ring-indigo-200"
+                  min="0"
+                  max="59"
                 />
               </div>
 
@@ -554,40 +568,42 @@ function App() {
         </div>
 
         {/* <!-- Contact form with transparency and positioned in the left corner --> */}
-        <div class="absolute top-20 left-0 p-4 max-w-xl backdrop-blur-md font-sans ml-16 border-2 border-gray-300 bg-white bg-opacity-20 rounded-3xl">
-          <h1 class="text-3xl text-gray-800 font-extrabold text-center">Contact Us</h1>
-          <form class="mt-8 space-y-4">
-            <input
-              type="text"
-              placeholder="Name"
-              class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-none focus:ring-2 focus:ring-orange-500 border-black"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-none focus:ring-2 focus:ring-orange-500 border-black"
-              required
-            />
-            <input
-              type="date"
-              placeholder="Date of Birth"
-              class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-none focus:ring-2 focus:ring-orange-500"
-              required
-            />
-            <textarea
-              placeholder="Message"
-              rows="6"
-              class="w-full rounded-md px-4 py-3 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-none focus:ring-2 focus:ring-orange-500"
-              required
-            ></textarea>
-            <button
-              type="submit"
-              class="text-black bg-yellow-300 hover:bg-orange-600 tracking-wide rounded-md text-sm px-4 py-3 w-full font-extrabold text-3xl">
-              Send
-            </button>
-          </form>
-        </div>
+        <section id='Contact'>
+          <div class="absolute top-20 left-0 p-4 max-w-xl backdrop-blur-md font-sans ml-16 border-2 border-gray-300 bg-white bg-opacity-20 rounded-3xl">
+            <h1 class="text-3xl text-gray-800 font-extrabold text-center">Contact Us</h1>
+            <form class="mt-8 space-y-4">
+              <input
+                type="text"
+                placeholder="Name"
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-none focus:ring-2 focus:ring-orange-500 border-black"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-none focus:ring-2 focus:ring-orange-500 border-black"
+                required
+              />
+              <input
+                type="date"
+                placeholder="Date of Birth"
+                class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              />
+              <textarea
+                placeholder="Message"
+                rows="6"
+                class="w-full rounded-md px-4 py-3 text-gray-800 bg-gray-100 focus:bg-white text-sm outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              ></textarea>
+              <button
+                type="submit"
+                class="text-black bg-yellow-300 hover:bg-orange-600 tracking-wide rounded-md text-sm px-4 py-3 w-full font-extrabold text-3xl">
+                Send
+              </button>
+            </form>
+          </div>
+        </section>
 
       </div>
 
